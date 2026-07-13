@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-950">
-      <header className="absolute inset-x-0 top-0 z-50 border-b border-white/10">
+      <header className="relative z-50 border-b border-white/10 bg-[#071a35]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#top" className="flex items-center gap-3" aria-label="Toumei home">
             <span className="grid size-10 place-items-center rounded-xl bg-orange-500 font-black text-white shadow-lg shadow-orange-500/20">T</span>
@@ -39,39 +39,14 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="hero-grid relative min-h-[780px] bg-[#071a35] pt-20 text-white">
-        <div className="glow absolute right-[-10%] top-16 size-[620px] rounded-full bg-blue-500/20 blur-3xl" />
-        <div className="mx-auto grid min-h-[700px] max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.08fr_.92fr] lg:px-8">
-          <div className="relative z-10 max-w-3xl animate-rise">
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-300/20 bg-blue-300/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-blue-200"><span className="size-2 rounded-full bg-orange-400" /> DLP Projector Manufacturer Since 2013</p>
-            <h1 className="text-balance text-5xl font-black leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">Projection engineered for <span className="text-orange-400">your market.</span></h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">From optical design and motherboard engineering to molding, assembly and aging tests, Toumei delivers complete OEM/ODM projector solutions for global brands and distributors.</p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a href="#products" className="rounded-full bg-orange-500 px-7 py-3.5 font-bold shadow-xl shadow-orange-500/20 transition hover:-translate-y-1 hover:bg-orange-400">Explore Products <span aria-hidden>→</span></a>
-              <a href="#oem" className="rounded-full border border-white/20 bg-white/5 px-7 py-3.5 font-bold backdrop-blur transition hover:border-white/40 hover:bg-white/10">OEM Capabilities</a>
-            </div>
-            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.15em] text-slate-400"><span>ISO 9001 / 14000</span><span>Ti DLP Technology</span><span>24-Hour Service</span></div>
-          </div>
-          <div className="relative hidden min-h-[500px] lg:block" aria-label="Featured Toumei projectors">
-            <div className="absolute left-8 top-7 w-[78%] rotate-2 overflow-hidden rounded-[2rem] border border-white/10 bg-white p-4 shadow-2xl shadow-black/30 transition duration-500 hover:rotate-0 hover:scale-[1.02]">
-              <Image src="/products/s-series-v2.jpg" alt="Toumei S Series gimbal projectors" width={900} height={600} priority className="aspect-[4/3] w-full rounded-2xl object-cover" />
-            </div>
-            <div className="absolute bottom-5 right-0 w-56 rounded-2xl border border-white/10 bg-[#10284a]/90 p-5 shadow-2xl backdrop-blur">
-              <p className="text-xs font-bold uppercase tracking-widest text-orange-400">Factory Direct</p><p className="mt-2 text-2xl font-black">20,000+</p><p className="text-sm text-slate-300">units / month</p>
-            </div>
-          </div>
-        </div>
+      <section id="top" className="relative overflow-hidden bg-[#071a35]" aria-label="Toumei projector OEM and ODM">
+        <h1 className="sr-only">Toumei DLP Projector OEM and ODM Manufacturer - Projection Engineered for Your Market</h1>
+        <Image src="/toumei-brand-hero.png" alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width={1200} height={630} quality={95} className="h-auto w-full" priority />
       </section>
 
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-slate-200 px-5 md:grid-cols-4 lg:px-8">
           {proof.map(([value,label]) => <div key={label} className="px-4 py-8 text-center"><strong className="block text-3xl font-black text-[#0a2a52]">{value}</strong><span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-slate-500">{label}</span></div>)}
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-16 lg:px-8" aria-label="Toumei brand campaign">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-slate-200 bg-[#071a35] shadow-2xl shadow-slate-900/15">
-          <Image src="/toumei-brand-hero.png" alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width={1200} height={630} quality={95} className="h-auto w-full" priority />
         </div>
       </section>
 
