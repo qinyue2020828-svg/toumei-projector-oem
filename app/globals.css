@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root { --navy: #071a35; --orange: #f97316; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-geist), Arial, sans-serif; background: white; }
+a { transition: color .2s ease, background-color .2s ease, transform .2s ease; }
+.hero-grid { background-image: linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px); background-size: 48px 48px; }
+.eyebrow { margin-bottom: .75rem; color: #f97316; font-size: .75rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+.section-title { max-width: 760px; color: #08264a; font-size: clamp(2.25rem,5vw,3.7rem); font-weight: 900; line-height: 1.04; letter-spacing: -.04em; }
+.product-card { box-shadow: 0 10px 35px rgba(15,23,42,.04); transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.product-card:hover { transform: translateY(-7px); border-color: rgba(249,115,22,.5); box-shadow: 0 24px 55px rgba(15,23,42,.12); }
+.field { display: flex; flex-direction: column; gap: .45rem; color: #334155; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.field input,.field select,.field textarea { width: 100%; border: 1px solid #e2e8f0; border-radius: .75rem; background: #f8fafc; padding: .9rem 1rem; color: #0f172a; font-size: .875rem; font-weight: 500; letter-spacing: 0; outline: none; text-transform: none; transition: border-color .2s, box-shadow .2s; }
+.field input:focus,.field select:focus,.field textarea:focus { border-color: #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,.13); }
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glow { 50% { transform: scale(1.08) translate(-2%,3%); opacity: .75; } }
+.animate-rise { animation: rise .8s cubic-bezier(.2,.75,.25,1) both; }
+.glow { animation: glow 7s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
