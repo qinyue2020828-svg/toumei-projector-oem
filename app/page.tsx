@@ -30,8 +30,7 @@ export default function Home() {
       <header className="relative z-50 border-b border-white/10 bg-[#071a35]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#top" className="flex items-center gap-3" aria-label="Toumei home">
-            <span className="grid size-10 place-items-center rounded-xl bg-orange-500 font-black text-white shadow-lg shadow-orange-500/20">T</span>
-            <span className="text-xl font-extrabold tracking-[0.18em] text-white">TOUMEI</span>
+            <img src={`${ASSET_BASE}/toumei-logo.png`} alt="Toumei" width="360" height="150" className="h-11 w-auto rounded-lg bg-white object-contain sm:h-12" />
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex" aria-label="Main navigation">
             <a href="#products">Products</a><a href="#oem">OEM / ODM</a><a href="#about">About</a><a href="#contact">Contact</a>
