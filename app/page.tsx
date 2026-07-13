@@ -1,15 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { FormEvent, useState } from "react";
 
+const ASSET_BASE = "https://cdn.jsdelivr.net/gh/qinyue2020828-svg/toumei-projector-oem@main/public";
+
 const products = [
-  { name: "C Series", tag: "Pocket Outdoor", image: "/products/c-series-v2.jpg", models: "C900 · C1000 · C2000", specs: "200 ANSI · 8000mAh · DLP-LINK 3D", detail: "One-hand portable projectors with Type-C power, 1.07:1 short throw and up to 190 minutes of battery life." },
-  { name: "M Series", tag: "Outdoor 1080P", image: "/products/m-series-v2.jpg", models: "M1 · M2", specs: "1080P · 300 ANSI · 15000mAh", detail: "Cup-sized DLP projectors with LiDAR autofocus, real-time keystone correction and an ultra-quiet 28dB cooling system." },
-  { name: "S Series", tag: "Gimbal & Education", image: "/products/s-series-v2.jpg", models: "S7 · S8 · S11 · S13", specs: "Up to 1000 ANSI · 20800mAh", detail: "Flexible gimbal projectors for home cinema, camping and smart education, available with triple-laser illumination." },
-  { name: "X Series", tag: "Flagship Brightness", image: "/products/x-series-v2.jpg", models: "X5 · X6", specs: "1080P · 1600 ANSI · HDR10", detail: "High-brightness DLP systems for meeting rooms and home theaters, with fast laser focus and wide-gamut imaging." },
-  { name: "Q Series", tag: "LCD Home Theater", image: "/products/q-series-v2.jpg", models: "Q3 · Q7", specs: "1080P · Up to 800 ANSI · Autofocus", detail: "Sealed optical engines, coated glass lenses and cinema-grade sound for dependable long-session viewing." },
-  { name: "UST Series", tag: "Ultra Short Throw", image: "/products/ust-series-v2.jpg", models: "S1 · S2", specs: "0.18:1 throw · 1000 ANSI · 110% BT.2020", detail: "True 1080P ultra-short-throw projectors, including a triple-laser model that creates 100 inches from just 23cm." },
+  { name: "C Series", tag: "Pocket Outdoor", image: "products/c-series-v2.jpg", models: "C900 · C1000 · C2000", specs: "200 ANSI · 8000mAh · DLP-LINK 3D", detail: "One-hand portable projectors with Type-C power, 1.07:1 short throw and up to 190 minutes of battery life." },
+  { name: "M Series", tag: "Outdoor 1080P", image: "products/m-series-v2.jpg", models: "M1 · M2", specs: "1080P · 300 ANSI · 15000mAh", detail: "Cup-sized DLP projectors with LiDAR autofocus, real-time keystone correction and an ultra-quiet 28dB cooling system." },
+  { name: "S Series", tag: "Gimbal & Education", image: "products/s-series-v2.jpg", models: "S7 · S8 · S11 · S13", specs: "Up to 1000 ANSI · 20800mAh", detail: "Flexible gimbal projectors for home cinema, camping and smart education, available with triple-laser illumination." },
+  { name: "X Series", tag: "Flagship Brightness", image: "products/x-series-v2.jpg", models: "X5 · X6", specs: "1080P · 1600 ANSI · HDR10", detail: "High-brightness DLP systems for meeting rooms and home theaters, with fast laser focus and wide-gamut imaging." },
+  { name: "Q Series", tag: "LCD Home Theater", image: "products/q-series-v2.jpg", models: "Q3 · Q7", specs: "1080P · Up to 800 ANSI · Autofocus", detail: "Sealed optical engines, coated glass lenses and cinema-grade sound for dependable long-session viewing." },
+  { name: "UST Series", tag: "Ultra Short Throw", image: "products/ust-series-v2.jpg", models: "S1 · S2", specs: "0.18:1 throw · 1000 ANSI · 110% BT.2020", detail: "True 1080P ultra-short-throw projectors, including a triple-laser model that creates 100 inches from just 23cm." },
 ];
 
 const proof = [
@@ -41,7 +42,7 @@ export default function Home() {
 
       <section id="top" className="relative overflow-hidden bg-[#071a35]" aria-label="Toumei projector OEM and ODM">
         <h1 className="sr-only">Toumei DLP Projector OEM and ODM Manufacturer - Projection Engineered for Your Market</h1>
-        <Image src="/toumei-brand-hero.png" alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width={1200} height={630} quality={95} className="h-auto w-full" priority />
+        <img src={`${ASSET_BASE}/toumei-brand-hero.png`} alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width="1200" height="630" fetchPriority="high" className="h-auto w-full" />
       </section>
 
       <section className="border-b border-slate-200 bg-slate-50">
@@ -57,7 +58,7 @@ export default function Home() {
         </div>
         <div className="mt-12 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {products.map((p, i) => <article key={p.name} className="product-card group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white">
-            <div className="relative aspect-[3/2] shrink-0 overflow-hidden bg-[#0b1930]"><Image src={p.image} alt={`Toumei ${p.name} projector family`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-center transition duration-700 group-hover:scale-[1.035]" /><span className="absolute left-5 top-5 rounded-full border border-white/10 bg-[#09274b]/90 px-3.5 py-2 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur">{p.tag}</span></div>
+            <div className="relative aspect-[3/2] shrink-0 overflow-hidden bg-[#0b1930]"><img src={`${ASSET_BASE}/${p.image}`} alt={`Toumei ${p.name} projector family`} loading="lazy" className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-[1.035]" /><span className="absolute left-5 top-5 rounded-full border border-white/10 bg-[#09274b]/90 px-3.5 py-2 text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur">{p.tag}</span></div>
             <div className="flex flex-1 flex-col p-6"><div className="flex min-h-8 items-center justify-between gap-4"><h3 className="text-2xl font-black text-[#08264a]">{p.name}</h3><span className="shrink-0 text-sm font-black tabular-nums text-orange-500">0{i+1}</span></div><p className="mt-2 min-h-5 text-sm font-bold text-slate-500">{p.models}</p><p className="mt-4 flex-1 text-sm leading-6 text-slate-600">{p.detail}</p><div className="mt-6 min-h-10 border-t border-slate-100 pt-4 text-xs font-bold uppercase leading-5 tracking-wider text-orange-600">{p.specs}</div></div>
           </article>)}
         </div>
@@ -73,7 +74,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-24 lg:grid-cols-2 lg:gap-20 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#0b1930] shadow-2xl"><Image src="/products/x-series-v2.jpg" alt="Toumei projector manufacturing portfolio" width={900} height={600} className="aspect-[3/2] w-full object-cover object-center" /><div className="absolute bottom-5 right-5 min-w-40 rounded-2xl border border-white/15 bg-orange-500/95 px-6 py-5 text-white shadow-xl backdrop-blur"><strong className="block text-3xl font-black tabular-nums">10M+</strong><span className="mt-1 block text-[11px] font-bold uppercase tracking-wider">R&amp;D investment</span></div></div>
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#0b1930] shadow-2xl"><img src={`${ASSET_BASE}/products/x-series-v2.jpg`} alt="Toumei projector manufacturing portfolio" width="900" height="600" loading="lazy" className="aspect-[3/2] w-full object-cover object-center" /><div className="absolute bottom-5 right-5 min-w-40 rounded-2xl border border-white/15 bg-orange-500/95 px-6 py-5 text-white shadow-xl backdrop-blur"><strong className="block text-3xl font-black tabular-nums">10M+</strong><span className="mt-1 block text-[11px] font-bold uppercase tracking-wider">R&amp;D investment</span></div></div>
         <div className="lg:py-3"><p className="eyebrow">About Toumei</p><h2 className="section-title">Engineering trust into every image.</h2><p className="mt-6 leading-8 text-slate-600">Shenzhen Toumei Technology Co., Ltd. is one of China’s early high-tech enterprises in DLP smart projection. Since 2013, we have combined production, sales and R&amp;D to deliver intelligent projection and 3D imaging solutions worldwide.</p><p className="mt-4 leading-8 text-slate-600">Our operating quality and environmental management systems follow ISO 9001/14000 standards, with customer satisfaction, continuous innovation and precision manufacturing at the center.</p><div className="mt-8 grid grid-cols-1 gap-3 text-center sm:grid-cols-3">{[['Integrity','Accountable'],['Dedication','Committed'],['Appreciation','Collaborative']].map(([a,b]) => <div key={a} className="flex min-h-20 flex-col items-center justify-center rounded-xl border border-slate-100 bg-slate-50 p-4"><strong className="block text-sm text-[#08264a]">{a}</strong><span className="mt-1 text-xs text-slate-500">{b}</span></div>)}</div></div>
       </section>
 
