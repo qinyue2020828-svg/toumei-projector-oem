@@ -39,9 +39,9 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="relative overflow-hidden bg-[#071a35]" aria-label="Toumei projector OEM and ODM">
+      <section id="top" className="relative flex justify-center overflow-hidden bg-[#071a35]" aria-label="Toumei projector OEM and ODM">
         <h1 className="sr-only">Toumei DLP Projector OEM and ODM Manufacturer - Projection Engineered for Your Market</h1>
-        <img src={`${ASSET_BASE}/toumei-brand-hero.png`} alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width="1200" height="630" fetchPriority="high" className="h-auto w-full md:h-[min(64vh,680px)] md:object-cover md:object-center" />
+        <img src={`${ASSET_BASE}/toumei-brand-hero.png`} alt="Toumei - Projection engineered for your market, DLP projector OEM and ODM" width="1200" height="630" fetchPriority="high" className="h-auto w-full md:max-w-[1500px]" />
       </section>
 
       <section className="border-b border-slate-200 bg-slate-50">
